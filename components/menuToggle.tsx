@@ -35,7 +35,7 @@ function MenuToggle({ toggle, isOpen }: any) {
       className="z-[999] -mr-6 -mt-4 flex size-20 flex-col justify-center rounded-full border-2 border-dark dark:border-light md:-mr-8 md:-mt-6 md:size-32 lg:-mt-12 lg:size-48"
       variants={circle}
     >
-      <Cursor toggleState={toggle} />
+      {Cursor(toggle)}
       {/* Pass the toggle state to the Cursor component */}
       <motion.button className="trigger size-1/2 self-center" onClick={toggle}>
         <svg className="" height={'100%'} width={'100%'} viewBox="0 0 100 100">

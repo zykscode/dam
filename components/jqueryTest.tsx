@@ -2,9 +2,14 @@
 
 'use client';
 
+import $ from 'jquery';
 import { useEffect } from 'react';
 
-const Cursor = ({ toggleState }: { toggleState: boolean }) => {
+interface CursorProps {
+  isOpen: boolean;
+}
+
+const Cursor: React.FC<CursorProps> = ({ isOpen }) => {
   useEffect(() => {
     if (typeof window !== 'undefined' && window.jQuery) {
       console.log('jQuery is loaded');
@@ -22,7 +27,7 @@ const Cursor = ({ toggleState }: { toggleState: boolean }) => {
           $cursorDot2.addClass('is--larger');
           $cursorText
             .removeClass('text-drag')
-            .addClass(toggleState ? 'text-close' : 'text-open');
+            .addClass(isOpen ? 'text-close' : 'text-open');
         })
         .on('mouseleave', function () {
           $cursorDot1.removeClass('is--larger');
@@ -41,11 +46,13 @@ const Cursor = ({ toggleState }: { toggleState: boolean }) => {
 
       $('.trigger').on('click', function () {
         $cursor.toggleClass('hide-cursor');
-          });
+      });
     } else {
       console.log('jQuery is not loaded');
     }
-  }, [toggleState]);
+  }, [isOpen]);
+
+  return null; // or render the custom cursor element
 };
 
 export default Cursor;
