@@ -1,0 +1,51 @@
+/* eslint-disable func-names */
+
+'use client';
+
+import { useEffect } from 'react';
+
+const Cursor = ({ toggleState }: { toggleState: boolean }) => {
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.jQuery) {
+      console.log('jQuery is loaded');
+
+      const $splideList = $('.splide__list, .trigger');
+      const $cursor = $('.cursor');
+      const $cursorDot1 = $('.cursor__dot1');
+      const $cursorDot2 = $('.cursor__dot2');
+      const $cursorText = $('.cursor__text');
+      const $control = $('.control');
+
+      $splideList
+        .on('mouseenter', function () {
+          $cursorDot1.addClass('is--larger');
+          $cursorDot2.addClass('is--larger');
+          $cursorText
+            .removeClass('text-drag')
+            .addClass(toggleState ? 'text-close' : 'text-open');
+        })
+        .on('mouseleave', function () {
+          $cursorDot1.removeClass('is--larger');
+          $cursorDot2.removeClass('is--larger');
+        });
+
+      $control
+        .on('mouseenter', function () {
+          $cursorDot1.addClass('opacity-0');
+          $cursorDot2.addClass('light-ring');
+        })
+        .on('mouseleave', function () {
+          $cursorDot1.removeClass('opacity-0');
+          $cursorDot2.removeClass('light-ring');
+        });
+
+      $('.trigger').on('click', function () {
+        $cursor.toggleClass('hide-cursor');
+          });
+    } else {
+      console.log('jQuery is not loaded');
+    }
+  }, [toggleState]);
+};
+
+export default Cursor;

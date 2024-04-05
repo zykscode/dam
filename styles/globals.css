@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --prm: 321 44% 85%;
+    --drk: 252 74% 9%;
+    --lght: 320 38% 89%;
+
+
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0.5rem;
+    --transition-duration: 3s;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+body {
+   transition: background-color var(--transition-duration) ease,
+    color var(--transition-duration) ease;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+}
+
+.hide-cursor { 
+  cursor: none;
+}
+.cursor{
+  pointer-events: none;
+}
+
+/* .cursor {
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  opacity: 0;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+} */
+
+.cursor.hide-cursor {
+  display: none;
+}
+
+.cursor__dot1 {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #0d0628;
+  -webkit-transition: opacity 350ms ease, background-color 350ms ease, height 350ms ease, width 350ms ease;
+  transition: opacity 350ms ease, background-color 350ms ease, height 350ms ease, width 350ms ease;
+}
+
+.cursor__dot1.is--larger {
+  width: 8.23em;
+  height: 8.23em;
+  background-color: #eed9e7;
+}
+
+.cursor__dot1.opacity-0 {
+  opacity: 0;
+}
+
+.cursor__dot1.is--scale-down {
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+}
+
+.cursor__dot2 {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  width: 52px;
+  height: 52px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #0d0628;
+  border-radius: 50%;
+  -webkit-transition: border-color 350ms ease, height 350ms ease, width 350ms ease, background-color 350ms ease, color 350ms ease;
+  transition: border-color 350ms ease, height 350ms ease, width 350ms ease, background-color 350ms ease, color 350ms ease;
+  color: transparent;
+}
+
+.cursor__dot2.is--larger {
+  width: 8.23em;
+  height: 8.23em;
+  background-color: #0d0628;
+  color: #e9c6dd;
+}
+
+.cursor__dot2.light-ring {
+  width: 6em;
+  height: 6em;
+  border-color: #eed9e7;
+}
+
+.cursor__dot2.is--scale-down {
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+}
+
+
+.text-open {
+  opacity: 1;
+}
+
+.text-open::after {
+  content: 'OPEN';
+}
+
+.text-close {
+  opacity: 1;
+}
+
+.text-close::after {
+  content: 'CLOSE';
+}
+
+.text-drag {
+  opacity: 0;
+}
+
+.text-drag::after {
+  content: 'DRAG';
+}
