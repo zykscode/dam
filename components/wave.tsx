@@ -34,7 +34,7 @@ const Wave = ({ isOpen }: { isOpen: boolean }) => {
     };
   }, [isOpen]);
 
-  return <div className="bg-green-500" ref={containerRef} />;
+  return <div className="" ref={containerRef} />;
 };
 
 export default Wave;

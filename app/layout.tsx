@@ -20,9 +20,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html className="overflow-x-hidden" lang="en">
       <body
-        className={`flex flex-col overflow-x-hidden bg-light text-dark  transition-colors  duration-700 ease-in-out dark:bg-dark dark:text-light ${Suisse.variable} ${Atyp.variable}`}
+        className={`flex flex-col bg-light text-dark  transition-colors  duration-700 ease-in-out dark:bg-dark dark:text-light ${Suisse.variable} ${Atyp.variable}`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {/* <Cursor /> */}

@@ -28,16 +28,14 @@ const DropdownNav = ({ isOpen }: { isOpen: boolean }) => {
   return (
     <motion.div
       variants={variants}
-      className={`absolute flex h-screen w-screen flex-col bg-yellow-200`}
+      className={`absolute flex h-screen w-screen flex-col justify-between`}
     >
-      <motion.div
-        variants={menu}
-        className="relative flex h-screen items-center bg-green-500 "
-      >
-        {' '}
-        <motion.div className=""></motion.div>
-        menuue{' '}
-      </motion.div>
+      <div className="relative flex h-full items-center bg-dark">
+        <motion.div variants={menu}>
+          <motion.div className=""></motion.div>
+          menuue
+        </motion.div>
+      </div>
       <Wave isOpen={isOpen} />
     </motion.div>
   );
