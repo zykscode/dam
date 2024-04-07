@@ -23,9 +23,15 @@ dependencies:
   framer-motion:
     specifier: ^11.0.5
     version: 11.0.25(react-dom@18.2.0)(react@18.2.0)
+  gsap:
+    specifier: ^3.12.5
+    version: 3.12.5
   jquery:
     specifier: ^3.7.1
     version: 3.7.1
+  lottie-web:
+    specifier: ^5.12.2
+    version: 5.12.2
   lucide-react:
     specifier: ^0.363.0
     version: 0.363.0(react@18.2.0)
@@ -2649,6 +2655,10 @@ packages:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
     dev: true
 
+  /gsap@3.12.5:
+    resolution: {integrity: sha512-srBfnk4n+Oe/ZnMIOXt3gT605BX9x5+rh/prT2F1SsNJsU1XuMiP0E2aptW481OnonOGACZWBqseH5Z7csHxhQ==}
+    dev: false
+
   /gzip-size@6.0.0:
     resolution: {integrity: sha512-ax7ZYomf6jqPTQ4+XCpUGyXKHk5WweS+e05MBO4/y3WJ5RkmPXNKvX+bx1behVILVwr6JSQvZAku021CHPXG3Q==}
     engines: {node: '>=10'}
@@ -3187,6 +3197,10 @@ packages:
     hasBin: true
     dependencies:
       js-tokens: 4.0.0
+
+  /lottie-web@5.12.2:
+    resolution: {integrity: sha512-uvhvYPC8kGPjXT3MyKMrL3JitEAmDMp30lVkuq/590Mw9ok6pWcFCwXJveo0t5uqYw1UREQHofD+jVpdjBv8wg==}
+    dev: false
 
   /lru-cache@10.2.0:
     resolution: {integrity: sha512-2bIM8x+VAf6JT4bKAljS1qUWgMsqZRPGJS6FSahIMPVvctcNhyVp7AJu7quxOW9jwkryBReKZY5tY5JYv2n/7Q==}

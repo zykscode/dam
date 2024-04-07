@@ -1,7 +1,7 @@
-'use client';
-
 import { motion } from 'framer-motion';
 import React from 'react';
+
+import Wave from './wave';
 
 const variants = {
   open: {
@@ -21,14 +21,14 @@ const menu = {
   },
   close: {
     opacity: 0,
-    transition: { duration: 0.5 },
+    transition: { duration: 0.2 },
   },
 };
-const DropdownNav = () => {
+const DropdownNav = ({ isOpen }: { isOpen: boolean }) => {
   return (
     <motion.div
       variants={variants}
-      className={`absolute  h-screen w-screen bg-yellow-200`}
+      className={`absolute flex h-screen w-screen flex-col bg-yellow-200`}
     >
       <motion.div
         variants={menu}
@@ -38,6 +38,7 @@ const DropdownNav = () => {
         <motion.div className=""></motion.div>
         menuue{' '}
       </motion.div>
+      <Wave isOpen={isOpen} />
     </motion.div>
   );
 };

@@ -48,7 +48,8 @@ const Header: React.FC = () => {
         variants={container}
         className="pb-[20px]"
       >
-        <DropdownNav />
+        <DropdownNav isOpen={isOpen} />
+
         <div className="z-20 flex items-center justify-between">
           <Logo />
           <MenuToggle isOpen={isOpen} toggle={handleClick} />
