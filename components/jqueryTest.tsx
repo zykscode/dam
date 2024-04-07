@@ -1,5 +1,7 @@
 /* eslint-disable func-names */
 
+/// <reference types="jquery" />
+
 'use client';
 
 import $ from 'jquery';
@@ -9,10 +11,16 @@ interface CursorProps {
   isOpen: boolean;
 }
 
+declare global {
+  interface Window {
+    jQuery: any;
+  }
+}
+
 const Cursor: React.FC<CursorProps> = ({ isOpen }: CursorProps) => {
   useEffect(() => {
     if (typeof window !== 'undefined' && window.jQuery) {
-        const $splideList = $('.splide__list, .trigger');
+      const $splideList = $('.splide__list, .trigger');
       const $cursor = $('.cursor');
       const $cursorDot1 = $('.cursor__dot1');
       const $cursorDot2 = $('.cursor__dot2');
