@@ -1,13 +1,10 @@
 import lottie from 'lottie-web';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { wave } from '@/lib/wave';
 
 const Wave = ({ isOpen }: { isOpen: boolean }) => {
   const containerRef = useRef(null);
-  console.log(isOpen);
-  const [isPaused, setIsPaused] = useState(false);
-  const [animationProgress, setAnimationProgress] = useState(0);
   useEffect(() => {
     const lottieInstance = lottie.loadAnimation({
       container: containerRef.current!,
@@ -19,12 +16,10 @@ const Wave = ({ isOpen }: { isOpen: boolean }) => {
 
     // Function for animation playback control
     const controlAnimation = () => {
-      if (!isOpen && !isPaused) {
+      if (!isOpen) {
         lottieInstance.playSegments([wave.op / 2, wave.op], true); // Play to completion
-        setAnimationProgress(1); // Mark as complete
-      } else if (isOpen && !isPaused) {
-        lottieInstance.playSegments([0.5, animationProgress * wave.op], true); // Play remaining half
-        setAnimationProgress(0.5); // Mark as halfway
+      } else if (isOpen) {
+        lottieInstance.playSegments([0, wave.op / 2], true); // Play remaining half
       }
     };
 
@@ -37,7 +32,7 @@ const Wave = ({ isOpen }: { isOpen: boolean }) => {
       lottieInstance.destroy();
       window.removeEventListener('isOpenChange', controlAnimation);
     };
-  }, [isOpen, isPaused, animationProgress]);
+  }, [isOpen]);
 
   return <div className="bg-green-500" ref={containerRef} />;
 };

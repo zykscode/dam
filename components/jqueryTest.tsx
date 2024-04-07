@@ -9,12 +9,10 @@ interface CursorProps {
   isOpen: boolean;
 }
 
-const Cursor: React.FC<CursorProps> = ({ isOpen }) => {
+const Cursor: React.FC<CursorProps> = ({ isOpen }: CursorProps) => {
   useEffect(() => {
     if (typeof window !== 'undefined' && window.jQuery) {
-      console.log('jQuery is loaded');
-
-      const $splideList = $('.splide__list, .trigger');
+        const $splideList = $('.splide__list, .trigger');
       const $cursor = $('.cursor');
       const $cursorDot1 = $('.cursor__dot1');
       const $cursorDot2 = $('.cursor__dot2');

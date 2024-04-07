@@ -21,7 +21,7 @@ const menu = {
   },
   close: {
     opacity: 0,
-    transition: { duration: 0.2 },
+    transition: { duration: 0.3 },
   },
 };
 const DropdownNav = ({ isOpen }: { isOpen: boolean }) => {

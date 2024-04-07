@@ -53,7 +53,7 @@ const Header: React.FC = () => {
         <div className="z-20 flex items-center justify-between">
           <Logo />
           <MenuToggle isOpen={isOpen} toggle={handleClick} />
-          <Cursor isOpen={isOpen} />
+          <Cursor />
         </div>
       </motion.nav>
     </header>
