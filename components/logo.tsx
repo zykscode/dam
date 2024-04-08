@@ -1,6 +1,8 @@
-const Logo = () => {
+const Logo = ({ isOpen }) => {
   return (
-    <span className="font-atyp self-center text-3xl font-semibold text-[#0d0628] md:p-4">
+    <span
+      className={`font-atyp z-50 self-center text-3xl font-semibold transition-colors duration-1000 ease-in-out md:p-4 ${isOpen ? 'text-light' : 'text-dark'}`}
+    >
       Damcom
     </span>
   );

@@ -36,7 +36,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`sticky top-0 z-[900] backdrop-blur-sm ${isOpen ? 'open' : ''}`}
+      className={`sticky top-0 z-[90] backdrop-blur-sm ${isOpen ? 'open' : ''}`}
     >
       <motion.nav
         initial={'close'}
@@ -46,8 +46,8 @@ const Header: React.FC = () => {
       >
         <DropdownNav isOpen={isOpen} />
 
-        <div className="z-20 flex items-center justify-between">
-          <Logo />
+        <div className="z-[200] flex items-center justify-between">
+          <Logo isOpen={isOpen} />
           <MenuToggle isOpen={isOpen} toggle={handleClick} />
           <Cursor />
         </div>
