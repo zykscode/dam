@@ -43,7 +43,7 @@ function MenuToggle({ toggle, isOpen }: any) {
           <Path
             variants={{
               close: {
-                transition: { duration: 0.4, delay: 1 },
+                transition: { duration: 0.4, delay: 0.75 },
                 d: 'M 20 40 L 80 40',
                 stroke: 'hsl(var(--drk))',
               },
@@ -55,7 +55,7 @@ function MenuToggle({ toggle, isOpen }: any) {
               close: {
                 d: 'M 20 60 L 80 60',
                 stroke: 'hsl(var(--drk))',
-                transition: { duration: 0.4, delay: 1 },
+                transition: { duration: 0.4, delay: 0.75 },
               },
               open: { d: 'M 20 70 L 80 30', stroke: 'hsl(var(--prm))' },
             }}
