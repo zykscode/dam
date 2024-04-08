@@ -75,6 +75,9 @@
 body {
    transition: background-color var(--transition-duration) ease,
     color var(--transition-duration) ease;
+    overflow: hidden auto;
+    width:100%;
+    height: 100%;
 }
 
 @layer base {
@@ -214,4 +217,10 @@ body {
 
 .text-drag::after {
   content: 'DRAG';
+}
+
+html {
+  padding: 0;
+  width: 100%;
+  overflow-x: clip;
 }

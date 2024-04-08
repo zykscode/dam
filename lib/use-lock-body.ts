@@ -1,24 +1,18 @@
-/* eslint-disable no-return-assign */
+/* eslint-disable consistent-return */
 
-'use client';
+import { useLayoutEffect } from 'react';
 
-import { useLayoutEffect, useState } from 'react';
-
-// @see https://usehooks.com/useLockBodyScroll
-export function useLockBody() {
-  const [isLocked, setIsLocked] = useState(false);
-
+export function useLockBody(isOpen: boolean) {
   useLayoutEffect(() => {
-    const originalStyle = window.getComputedStyle(document.body).overflow;
-    document.body.style.overflow = isLocked ? 'hidden' : originalStyle;
+    if (isOpen) {
+      const originalStyle = window.getComputedStyle(
+        document.documentElement,
+      ).overflow; // Change: Target html element
+      document.documentElement.style.overflow = 'hidden';
 
-    return () => {
-      document.body.style.overflow = originalStyle;
-    };
-  }, [isLocked]);
-
-  const lockBody = () => setIsLocked(true);
-  const unlockBody = () => setIsLocked(false);
-
-  return [isLocked, lockBody, unlockBody] as const;
+      return () => {
+        document.documentElement.style.overflow = originalStyle; // Change: Restore html element's style
+      };
+    }
+  }, [isOpen]);
 }

@@ -26,7 +26,8 @@ const Cursor: React.FC<CursorProps> = ({ isOpen }: CursorProps) => {
       const $cursorDot2 = $('.cursor__dot2');
       const $cursorText = $('.cursor__text');
       const $control = $('.control');
-
+      const $html = $('body');
+      console.log($html);
       $splideList
         .on('mouseenter', function () {
           $cursorDot1.addClass('is--larger');
@@ -52,6 +53,7 @@ const Cursor: React.FC<CursorProps> = ({ isOpen }: CursorProps) => {
 
       $('.trigger').on('click', function () {
         $cursor.toggleClass('hide-cursor');
+        $html.toggleClass('overflow-hidden');
       });
     } else {
       console.log('jQuery is not loaded');

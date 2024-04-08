@@ -26,16 +26,12 @@ const container = {
 };
 
 const Header: React.FC = () => {
-  const [isLocked, lockBody, unlockBody] = useLockBody();
+  // const [isLocked, lockBody, unlockBody] = useLockBody();
   const [isOpen, toggleOpen] = useCycle(false, true);
+  useLockBody(isOpen);
 
   const handleClick = () => {
     toggleOpen();
-    if (isLocked) {
-      unlockBody();
-    } else {
-      lockBody();
-    }
   };
 
   return (
