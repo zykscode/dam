@@ -3,6 +3,7 @@ import '@/styles/globals.css';
 import type { Metadata } from 'next';
 import Script from 'next/script';
 
+import Cursor from '@/components/cursor';
 import Header from '@/components/header';
 import RotatingLogo from '@/components/rotatingLogo';
 import { TailwindIndicator } from '@/components/tailwind-indicator';
@@ -22,11 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        style={{ overflow: 'hidden auto', width: '100%' }}
         className={` bg-light text-dark  transition-colors  duration-700 ease-in-out dark:bg-dark dark:text-light ${Suisse.variable} ${Atyp.variable}`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {/* <Cursor /> */}
+          <Cursor />
           <Header />
           {children}
 

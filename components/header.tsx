@@ -49,7 +49,6 @@ const Header: React.FC = () => {
         <div className="z-[200] flex items-center justify-between">
           <Logo isOpen={isOpen} />
           <MenuToggle isOpen={isOpen} toggle={handleClick} />
-          <Cursor />
         </div>
       </motion.nav>
     </header>

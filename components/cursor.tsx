@@ -1,38 +1,59 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { useEffect } from 'react';
+
+import styles from './style.module.css';
 
 const Cursor = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const cursorSize = 30;
+  const mouse = {
+    x: useMotionValue(0),
+    y: useMotionValue(0),
+  };
 
+  const scale = {
+    x: useMotionValue(1),
+    y: useMotionValue(1),
+  };
+
+  const smoothOptions = { damping: 10, stiffness: 100, mass: 2 };
+  const smoothMouse = {
+    x: useSpring(mouse.x, smoothOptions),
+    y: useSpring(mouse.y, smoothOptions),
+  };
+
+  const manageMouseMove = (e: any) => {
+    const { clientX, clientY } = e;
+    mouse.x.set(clientX - cursorSize / 2);
+    mouse.y.set(clientY - cursorSize / 2);
+  };
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
+    window.addEventListener('mousemove', manageMouseMove);
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mousemove', manageMouseMove);
     };
   }, []);
 
   return (
-    <div
-      className=" pointer-events-none bg-green-500"
+    <motion.div
+      className={`${styles.cursor}`}
       style={{
-        position: 'fixed',
-        left: mousePosition.x - 16,
-        top: mousePosition.y - 16,
-        transform: 'translate(-50%, -50%)',
-        zIndex: 999,
+        left: smoothMouse.x,
+        top: smoothMouse.y,
+        scaleX: scale.x,
+        scaleY: scale.y,
       }}
+      animate={{
+        width: cursorSize,
+        height: cursorSize,
+      }}
+      transition={{ delay: 0.1 }}
     >
-      <div className=" absolute size-3 rounded-full bg-white" />
-      <div className="border-500 absolute flex size-12 items-center justify-center rounded-full border-2">
-        <p className="cursor__text text-white transition duration-700 ease-in"></p>
-      </div>
-    </div>
+      {/* <motion.div className="size-4 rounded bg-green-400">
+        <motion.p className="cursor_text"></motion.p>
+      </motion.div> */}
+    </motion.div>
   );
 };
 

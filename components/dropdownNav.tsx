@@ -30,10 +30,13 @@ const DropdownNav = ({ isOpen }: { isOpen: boolean }) => {
       variants={variants}
       className={`absolute flex h-screen w-screen flex-col justify-between`}
     >
-      <div className="relative flex h-full items-center bg-dark">
+      <div className="relative flex h-full items-center  bg-yellow-300">
         <motion.div variants={menu}>
-          <motion.div className=""></motion.div>
-          menuue
+          <motion.div className="block justify-between md:flex">
+            <div className="flex flex-col bg-green-100 pl-[4.06em]">
+              
+            </div>
+          </motion.div>
         </motion.div>
       </div>
       <Wave isOpen={isOpen} />
