@@ -5,7 +5,6 @@ import React from 'react';
 
 import { useLockBody } from '@/lib/use-lock-body';
 
-import Cursor from './cursor';
 import DropdownNav from './dropdownNav';
 import Logo from './logo';
 import MenuToggle from './menuToggle';

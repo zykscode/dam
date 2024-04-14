@@ -33,9 +33,7 @@ const DropdownNav = ({ isOpen }: { isOpen: boolean }) => {
       <div className="relative flex h-full items-center  bg-yellow-300">
         <motion.div variants={menu}>
           <motion.div className="block justify-between md:flex">
-            <div className="flex flex-col bg-green-100 pl-[4.06em]">
-              
-            </div>
+            <div className="flex flex-col bg-green-100 pl-[4.06em]"></div>
           </motion.div>
         </motion.div>
       </div>
