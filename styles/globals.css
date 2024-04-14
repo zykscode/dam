@@ -224,3 +224,7 @@ html {
   width: 100%;
   overflow-x: clip;
 }
+
+.header{
+  position: sticky;
+}

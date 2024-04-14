@@ -61,7 +61,7 @@ const RotatingLogo = ({ baseVelocity = 100 }) => {
           ease: 'linear',
           repeatDelay: 0,
         }}
-        className="fixed bottom-2 right-2 size-12 overflow-hidden rounded-full border-2 px-1 md:size-24 md:px-2 "
+        className="fixed bottom-2 right-2 z-50 size-12 overflow-hidden rounded-full border-2 px-1 md:size-24 md:px-2 "
       >
         <CurvedText
           text="DAMCOM  DAMCOM "

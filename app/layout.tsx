@@ -3,7 +3,6 @@ import '@/styles/globals.css';
 import type { Metadata } from 'next';
 import Script from 'next/script';
 
-import Cursor from '@/components/cursor';
 import Header from '@/components/header';
 import RotatingLogo from '@/components/rotatingLogo';
 import { TailwindIndicator } from '@/components/tailwind-indicator';
@@ -23,13 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` bg-light text-dark  transition-colors  duration-700 ease-in-out dark:bg-dark dark:text-light ${Suisse.variable} ${Atyp.variable}`}
+        className={`  bg-light text-dark  transition-colors  duration-700 ease-in-out dark:bg-dark dark:text-light ${Suisse.variable} ${Atyp.variable}`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Cursor />
           <Header />
-          {children}
-
+          <div className="flex flex-col">{children}</div>
           <TailwindIndicator />
           <RotatingLogo />
         </ThemeProvider>

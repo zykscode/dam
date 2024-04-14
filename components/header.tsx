@@ -34,9 +34,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header
-      className={`sticky top-0 z-[90] backdrop-blur-sm ${isOpen ? 'open' : ''}`}
-    >
+    <header className={`header z-40 backdrop-blur-sm ${isOpen ? 'open' : ''}`}>
       <motion.nav
         initial={'close'}
         animate={isOpen ? 'open' : 'close'}

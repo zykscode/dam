@@ -209,7 +209,7 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        'relative group hover:border-light transition duration-700 border-dark  border-2   h-12 w-12 p-2 hover:p-0 overflow-hidden rounded-full',
+        'relative group hover:border-light transition duration-700 border-dark  border-2 size-8 md:size-12 p-2 hover:p-0 overflow-hidden rounded-full',
         orientation === 'horizontal' ? '' : '',
         className,
       )}
@@ -218,7 +218,7 @@ const CarouselPrevious = React.forwardRef<
       {...props}
     >
       <div className="absolute  size-full -translate-x-full -translate-y-full rounded-full  bg-dark transition duration-700 ease-out group-hover:translate-x-0 group-hover:translate-y-0"></div>
-      <NextIcon className="z-10 group-hover:fill-light" />
+      <NextIcon className="z-10 size-4 group-hover:fill-light md:size-6" />
       <span className="sr-only">Previous slide</span>
     </Button>
   );
@@ -237,7 +237,7 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        'relative group border-dark border-2 hover:border-light hover:border-1 overflow-hidden p-2 hover:p-0 h-12 w-12 rounded-full',
+        'relative group border-dark border-2 hover:border-light hover:border-1 overflow-hidden p-2 hover:p-0 size-8 md:size-12 rounded-full',
         orientation === 'horizontal' ? '' : '',
         className,
       )}
@@ -246,7 +246,7 @@ const CarouselNext = React.forwardRef<
       {...props}
     >
       <div className="absolute size-full -translate-y-full translate-x-full rounded-full bg-dark transition  duration-700 ease-out hover:bg-dark group-hover:translate-x-0 group-hover:translate-y-0"></div>
-      <NextIcon className="rotate-180 group-hover:fill-light" />
+      <NextIcon className="size-4 rotate-180 group-hover:fill-light md:size-6" />
       <span className="sr-only">Next slide</span>
     </Button>
   );
