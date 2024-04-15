@@ -73,6 +73,9 @@ devDependencies:
   "@types/react-dom":
     specifier: ^18
     version: 18.2.24
+  "@types/webpack-env":
+    specifier: ^1.18.4
+    version: 1.18.4
   "@typescript-eslint/eslint-plugin":
     specifier: ^6.19.1
     version: 6.21.0(@typescript-eslint/parser@6.21.0)(eslint@8.57.0)(typescript@5.4.4)
@@ -758,6 +761,13 @@ packages:
     resolution:
       {
         integrity: sha512-0vWLNK2D5MT9dg0iOo8GlKguPAU02QjmZitPEsXRuJXU/OGIOt9vT9Fc26wtYuavLxtO45v9PGleoL9Z0k1LHg==,
+      }
+    dev: true
+
+  /@types/webpack-env@1.18.4:
+    resolution:
+      {
+        integrity: sha512-I6e+9+HtWADAWeeJWDFQtdk4EVSAbj6Rtz4q8fJ7mSr1M0jzlFcs8/HZ+Xb5SHzVm1dxH7aUiI+A8kA8Gcrm0A==,
       }
     dev: true
 

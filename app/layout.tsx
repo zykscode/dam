@@ -26,7 +26,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
-          <div className="flex flex-col">{children}</div>
+          <div className="relative flex flex-col">{children}</div>
           <TailwindIndicator />
           <RotatingLogo />
         </ThemeProvider>

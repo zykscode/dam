@@ -28,7 +28,7 @@ const DropdownNav = ({ isOpen }: { isOpen: boolean }) => {
   return (
     <motion.div
       variants={variants}
-      className={`absolute flex h-screen w-screen flex-col justify-between`}
+      className={`absolute ${isOpen ? '' : 'hidden'} flex h-screen w-screen flex-col justify-between`}
     >
       <div className="relative flex h-full items-center  bg-yellow-300">
         <motion.div variants={menu}>
