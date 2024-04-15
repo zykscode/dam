@@ -24,9 +24,12 @@ export function CarouselSpacing() {
         <SVGComponent className=" absolute z-10" />
         <CarouselContent className="overflow-visible">
           {images.map((image, index) => (
-            <CarouselItem key={index} className="basis-[85%]  md:basis-[30%]">
-              <Card className="h-full border-0 bg-transparent md:h-[40vw]">
-                <CardContent className="flex aspect-square size-full items-center justify-center p-6 md:size-full">
+            <CarouselItem
+              key={index}
+              className="aspect-square basis-[85%] bg-dark md:basis-[30%]"
+            >
+              <Card className="h-full bg-green-600 md:h-[40vw]">
+                <CardContent className="size-full ">
                   <Image
                     src={image}
                     placeholder="blur"

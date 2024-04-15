@@ -209,7 +209,7 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        'relative group hover:border-light transition duration-700 border-dark  border-2 size-8 md:size-12 p-2 hover:p-0 overflow-hidden rounded-full',
+        'relative group hover:border-light transition duration-700 border-dark  border-1 md:border-2 size-8 md:size-12 p-2 hover:p-0 overflow-hidden rounded-full',
         orientation === 'horizontal' ? '' : '',
         className,
       )}
@@ -237,7 +237,7 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        'relative group border-dark border-2 hover:border-light hover:border-1 overflow-hidden p-2 hover:p-0 size-8 md:size-12 rounded-full',
+        'relative group border-dark border-1  md:border-2 hover:border-light hover:border-1 overflow-hidden p-2 hover:p-0 size-8 md:size-12 rounded-full',
         orientation === 'horizontal' ? '' : '',
         className,
       )}
