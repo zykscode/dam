@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import { wave } from '@/lib/wave';
 
 const Wave = ({ isOpen }: { isOpen: boolean }) => {
-  console.log(isOpen)
+  console.log(isOpen);
   const containerRef = useRef(null);
   useEffect(() => {
     const lottieInstance = lottie.loadAnimation({
