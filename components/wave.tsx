@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import { wave } from '@/lib/wave';
 
 const Wave = ({ isOpen }: { isOpen: boolean }) => {
+  console.log(isOpen)
   const containerRef = useRef(null);
   useEffect(() => {
     const lottieInstance = lottie.loadAnimation({
@@ -17,7 +18,7 @@ const Wave = ({ isOpen }: { isOpen: boolean }) => {
     // Function for animation playback control
     const controlAnimation = () => {
       if (!isOpen) {
-        lottieInstance.playSegments([wave.op / 2, wave.op], true); // Play to completion
+        lottieInstance.playSegments([wave.op / 1.8, wave.op], true); // Play to completion
       } else if (isOpen) {
         lottieInstance.playSegments([0, wave.op / 2], true); // Play remaining half
       }

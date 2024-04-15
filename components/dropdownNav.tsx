@@ -1,7 +1,10 @@
 /* eslint-disable no-restricted-globals */
 import { motion } from 'framer-motion';
-import React from 'react';
+import React, { useState } from 'react';
 
+import { homepageNavs } from '@/config/homepage';
+
+import Body from './nav';
 import Wave from './wave';
 
 const variants = {
@@ -26,17 +29,26 @@ const menu = {
   },
 };
 const DropdownNav = ({ isOpen }: { isOpen: boolean }) => {
+  const [selectedLink, setSelectedLink] = useState({
+    isActive: false,
+    index: 0,
+  });
   return (
     <motion.div
       variants={variants}
-      animate="open"
-      exit={'close'}
-      className={`absolute ${isOpen ? '' : 'hidden'} flex h-screen w-screen flex-col justify-between`}
+      className={`absolute flex h-screen w-screen flex-col justify-between`}
     >
-      <div className="relative flex h-full items-center  bg-yellow-300">
+      <div className=" -mb-1 flex h-full items-center justify-center bg-dark">
         <motion.div variants={menu}>
-          <motion.div className="block justify-between md:flex">
-            <div className="flex flex-col bg-green-100 pl-[4.06em]"></div>
+          <motion.div className="mx-auto block w-full justify-center bg-slate-300 ">
+            <div className="flex flex-col pl-[4.06em]">
+              <Body
+                links={homepageNavs.mainNavs}
+                selectedLink={selectedLink}
+                setSelectedLink={setSelectedLink}
+              />
+            </div>
+            <div className="w-full bg-blue-600"></div>
           </motion.div>
         </motion.div>
       </div>
