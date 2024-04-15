@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useCycle } from 'framer-motion';
+import { AnimatePresence, motion, useCycle } from 'framer-motion';
 import React from 'react';
 
 import { useLockBody } from '@/lib/use-lock-body';
@@ -41,8 +41,9 @@ const Header: React.FC = () => {
         variants={container}
         className="pb-[20px]"
       >
-        <DropdownNav isOpen={isOpen} />
-
+        <AnimatePresence mode="wait">
+          {isOpen && <DropdownNav isOpen={isOpen} />}
+        </AnimatePresence>
         <div className="z-[200] flex items-center justify-between">
           <Logo isOpen={isOpen} />
           <MenuToggle isOpen={isOpen} toggle={handleClick} />

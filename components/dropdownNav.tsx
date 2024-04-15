@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import { motion } from 'framer-motion';
 import React from 'react';
 
@@ -28,6 +29,8 @@ const DropdownNav = ({ isOpen }: { isOpen: boolean }) => {
   return (
     <motion.div
       variants={variants}
+      animate="open"
+      exit={'close'}
       className={`absolute ${isOpen ? '' : 'hidden'} flex h-screen w-screen flex-col justify-between`}
     >
       <div className="relative flex h-full items-center  bg-yellow-300">

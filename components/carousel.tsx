@@ -22,13 +22,10 @@ export function CarouselSpacing() {
     <Carousel opts={{ loop: true }} className=" relative w-screen ">
       <div>
         <SVGComponent className=" absolute z-10" />
-        <CarouselContent className="splide__list overflow-visible">
+        <CarouselContent className="overflow-visible">
           {images.map((image, index) => (
-            <CarouselItem
-              key={index}
-              className="basis-[85%] gap-2 md:basis-[30%]"
-            >
-              <Card className="h-full bg-dark md:h-[40vw]">
+            <CarouselItem key={index} className="basis-[85%]  md:basis-[30%]">
+              <Card className="h-full border-0 bg-transparent md:h-[40vw]">
                 <CardContent className="flex aspect-square size-full items-center justify-center p-6 md:size-full">
                   <Image
                     src={image}
