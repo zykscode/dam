@@ -64,20 +64,27 @@ export default function Body({ links, selectedLink, setSelectedLink }: any) {
   };
 
   return (
-    <div className={``}>
+    <div
+      className={`mb-8  flex w-full flex-col justify-end gap-8 pl-[4.06em] text-7xl capitalize`}
+    >
       {links.map(
         (link: { title: string; href: string; src: string }, index: number) => {
           const { title, href } = link;
           return (
-            <Link key={`l_${index}`} href={href}>
+            <Link
+              className="group flex items-center justify-center align-middle"
+              key={`l_${index}`}
+              href={href}
+              onMouseOver={() => {
+                setSelectedLink({ isActive: true, index });
+              }}
+              onMouseLeave={() => {
+                setSelectedLink({ isActive: false, index });
+              }}
+            >
+              <div className="duration-[3000ms] h-[3px] w-0 bg-light transition ease-in group-hover:w-10"></div>
               <motion.p
-                className="text-10"
-                onMouseOver={() => {
-                  setSelectedLink({ isActive: true, index });
-                }}
-                onMouseLeave={() => {
-                  setSelectedLink({ isActive: false, index });
-                }}
+                className="text-10 text-light  transition-all duration-1000 group-hover:italic"
                 variants={blur}
                 animate={
                   selectedLink.isActive && selectedLink.index !== index

@@ -57,19 +57,18 @@ const DropdownNav = ({ isOpen }: { isOpen: boolean }) => {
     >
       <div className=" -mb-1 flex h-full items-center justify-center bg-dark">
         <motion.div className="size-full" variants={menu}>
-          <motion.div className=" block h-2/3 bg-slate-300 md:flex md:flex-row md:justify-center ">
-            <div className="mb-8 flex flex-col justify-end bg-green-400 pl-[4.06em] capitalize">
-              <Body
-                links={links}
-                selectedLink={selectedLink}
-                setSelectedLink={setSelectedLink}
-              />
-            </div>
+          <motion.div className=" block h-full md:flex md:flex-row md:justify-center ">
+            <Body
+              links={links}
+              selectedLink={selectedLink}
+              setSelectedLink={setSelectedLink}
+            />
+
             <motion.div
               variants={opacity}
               initial="initial"
               animate={selectedLink.isActive ? 'open' : 'closed'}
-              className={`  bg-green-400`}
+              className={` w-full  bg-green-200`}
             >
               <Image
                 src={`/assets/images/${links[selectedLink.index].src}`}
