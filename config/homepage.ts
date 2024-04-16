@@ -1,7 +1,8 @@
 export const homepageNavs = {
   mainNavs: [
-    { title: 'about', href: '/about', src: 'shop.jpg' },
-    { title: 'service', href: '/service', src: 'shop.jpg' },
+    { title: 'Home', href: '/', src: 'home.jpg' },
+    { title: 'about', href: '/about', src: 'about.jpg' },
+    { title: 'service', href: '/service', src: 'service.jpg' },
     { title: 'shop', href: '/shop', src: 'shop.jpg' },
   ],
 };

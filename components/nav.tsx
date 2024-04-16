@@ -37,6 +37,7 @@ const translate = {
 };
 
 export default function Body({ links, selectedLink, setSelectedLink }: any) {
+  console.log(selectedLink, selectedLink.index);
   const getChars = (word: string) => {
     const chars: JSX.Element[] = [];
     word.split('').forEach(
@@ -70,7 +71,7 @@ export default function Body({ links, selectedLink, setSelectedLink }: any) {
           return (
             <Link key={`l_${index}`} href={href}>
               <motion.p
-                className="text-[7.03em]"
+                className="text-10"
                 onMouseOver={() => {
                   setSelectedLink({ isActive: true, index });
                 }}
