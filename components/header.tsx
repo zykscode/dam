@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useCycle } from 'framer-motion';
+import { AnimatePresence, motion, useCycle } from 'framer-motion';
 import React from 'react';
 
 import { useLockBody } from '@/lib/use-lock-body';
@@ -8,6 +8,18 @@ import { useLockBody } from '@/lib/use-lock-body';
 import DropdownNav from './dropdownNav';
 import Logo from './logo';
 import MenuToggle from './menuToggle';
+import Wave from './wave';
+
+const variants = {
+  open: {
+    y: '0%',
+    transition: { when: 'beforeChildren', duration: 0.5 },
+  },
+  close: {
+    y: '-100%',
+    transition: { when: 'afterChidren', duration: 0.5 },
+  },
+};
 
 const container = {
   close: {
@@ -41,7 +53,15 @@ const Header: React.FC = () => {
         variants={container}
         className="pb-[20px]"
       >
-        <DropdownNav isOpen={isOpen} />
+        <motion.div
+          variants={variants}
+          className={`absolute flex h-screen w-screen flex-col justify-between`}
+        >
+          <AnimatePresence mode="wait">
+            {isOpen && <DropdownNav />}
+          </AnimatePresence>
+          <Wave isOpen={isOpen} />
+        </motion.div>
         <div className="z-[200] flex items-center justify-between">
           <Logo isOpen={isOpen} />
           <MenuToggle isOpen={isOpen} toggle={handleClick} />

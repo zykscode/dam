@@ -24,12 +24,12 @@ const translate = {
     y: '100%',
     opacity: 0,
   },
-  enter: (i: any) => ({
+  open: (i) => ({
     y: 0,
     opacity: 1,
     transition: { duration: 1, ease: [0.76, 0, 0.24, 1], delay: i[0] },
   }),
-  exit: (i: any) => ({
+  close: (i) => ({
     y: '100%',
     opacity: 0,
     transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: i[1] },
@@ -37,7 +37,6 @@ const translate = {
 };
 
 export default function Body({ links, selectedLink, setSelectedLink }: any) {
-  console.log(selectedLink, selectedLink.index);
   const getChars = (word: string) => {
     const chars: JSX.Element[] = [];
     word.split('').forEach(
@@ -51,8 +50,8 @@ export default function Body({ links, selectedLink, setSelectedLink }: any) {
             custom={[i * 0.02, (word.length - i) * 0.01]}
             variants={translate}
             initial="initial"
-            animate="enter"
-            exit="exit"
+            animate="open"
+            exit="close"
             key={char + i}
           >
             {char}
@@ -60,19 +59,20 @@ export default function Body({ links, selectedLink, setSelectedLink }: any) {
         );
       },
     );
+    console.log(chars);
     return chars;
   };
 
   return (
     <div
-      className={`mb-8  flex w-full flex-col justify-end gap-8 pl-[4.06em] text-7xl capitalize`}
+      className={`flex w-full flex-col justify-start gap-4  text-4xl capitalize md:justify-end md:text-7xl`}
     >
       {links.map(
         (link: { title: string; href: string; src: string }, index: number) => {
           const { title, href } = link;
           return (
             <Link
-              className="group flex items-center justify-center align-middle"
+              className="group mb-8 flex h-full items-center justify-center align-middle md:mr-10 md:justify-end"
               key={`l_${index}`}
               href={href}
               onMouseOver={() => {
@@ -82,7 +82,7 @@ export default function Body({ links, selectedLink, setSelectedLink }: any) {
                 setSelectedLink({ isActive: false, index });
               }}
             >
-              <div className="duration-[3000ms] h-[3px] w-0 bg-light transition ease-in group-hover:w-10"></div>
+              <div className="h-[3px] w-0 bg-light transition duration-700 ease-in group-hover:w-10"></div>
               <motion.p
                 className="text-10 text-light  transition-all duration-1000 group-hover:italic"
                 variants={blur}
