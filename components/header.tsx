@@ -55,7 +55,7 @@ const Header: React.FC = () => {
       >
         <motion.div
           variants={variants}
-          className={`absolute flex h-screen w-screen flex-col justify-between`}
+          className={`absolute bg-green-400 flex h-screen w-screen flex-col justify-between`}
         >
           <AnimatePresence mode="wait">
             {isOpen && <DropdownNav />}
